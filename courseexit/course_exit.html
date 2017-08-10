@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Course-exit
+</title>
+ <link rel="stylesheet" href="cssf/normalizef.css">
+
+    
+        <link rel="stylesheet" href="cssf/stylef.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li><a href="studentdashboard.php">Home</a></li>
+    </ul>
+	<ul class="nav navbar-nav pull-right">
+	<li><a href="../logout_request.php"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+	</ul>
+  </div>
+</nav>
+<br><br><br>
+<table>
+	<thead>
+		<tr>
+			<th><center>Question</center></th>
+			<th colspan="2"><center>Options</center></th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr>
+			<td><center>1</center></td>
+			<td ><center><button type="button" class="btn btn-success" id="Y1" >Yes</center></td>
+			
+			<td><center><button type="button" class="btn btn-success" id="X1" onclick="myFunction()">No</button></center></td>
+			</tr>
+			<tr>
+			<td colspan="3"><form style="display:none" id="f1">
+  <input type="radio" name="" value="1" >Low &nbsp;
+  <input type="radio" name="" value="3">Medium &nbsp;
+  <input type="radio" name="" value="5">High &nbsp;
+</form></td></tr>
+			<script>
+		
+			
+				$( "#Y1" ).click(function() {
+				$( "#f1" ).slideToggle( "slow" );
+			});
+			</script>
+			<script>
+				$( "#X1" ).click(function() {
+				$( "#10" ).slideToggle( "slow" );
+			});
+		
+			</script>
+			
+		</tr>
+		<tr >
+		<td colspan="3"><textarea rows="3" cols="135" style="display:none" id="10"></textarea></td>
+		</tr>
+		<tr>
+		<?php
+			echo"<td><center>2</center></td>
+			<form action='$_SERVER[PHP_SELF]' method='POST'>
+			<input type='hidden' value='true' name='o1'>
+			<td><center><button type='submit' class='btn btn-success'>Yes</center></td>
+			</form>
+			<form action='$_SERVER[PHP_SELF]' method='POST'>
+			<input type='hidden' value='false' name='t1'>
+			<td><center><button type='submit' class='btn btn-success' id='X2'>No</center></td>
+			</form>";
+			
+			if ($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+				if(!empty($_POST['o1']))
+				{
+					echo "YES";
+				}
+				else if(!empty($_POST['t1']))
+				{
+					echo"NO";
+				}
+			}
+			?>
+			<script>
+			
+				$( "#X2" ).click(function() {
+				
+				$( "#11" ).slideToggle( "slow" );
+				
+			});
+			
+			</script>
+		</tr>	
+		<tr >
+		<td colspan="3"><textarea rows="3" cols="135" style="display:none"  id="11"></textarea></td>
+		</tr>
+	<tbody>
+</table>
+</body>
+</html>	

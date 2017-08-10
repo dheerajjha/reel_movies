@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Patua+One|Open+Sans);
+
+
+table {
+  background: white;
+  width:75%;
+  border-radius: 5px;
+  margin: 50px auto;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+thead th {
+  font-family: 'Patua One', cursive;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  padding: 20px;
+  background-color:#0FC7B3;
+  border-top: 1px solid #858d99;
+}
+
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #5f6062;
+  font-size: 13px;
+  padding: 20px 20px 20px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+ .odd{
+	background: #f0f3f5;
+}
+.even{
+	background: #white;
+}
+/*tbody tr:nth-child(even) {
+  background: #f0f3f5;
+}
+tbody tr:nth-child(odd) {
+	background:white;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}*/
+
+tbody:hover > tr:hover td {
+  text-shadow: none;
+  color: #0FC7B3;
+  /*filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);*/
+  opacity: 1;
+}
