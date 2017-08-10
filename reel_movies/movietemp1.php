@@ -1,0 +1,12 @@
+<?php
+session_start();
+?>
+<html>
+<body>
+<?php
+    $m_id=$_POST['movieid'];
+	 $_SESSION['movie']=$m_id;
+	 header("Location:time_price.php");
+?>
+</body>
+</html>
